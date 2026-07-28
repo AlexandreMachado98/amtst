@@ -36,6 +36,15 @@
   a{text-decoration:none; color:inherit;}
   ul{list-style:none;}
   img,svg{display:block; max-width:100%;}
+  
+  /* LOGOS COM BORDAS ARREDONDADAS */
+.logo .mark img,
+.hero-art .logo-full,
+.about-art img,
+.foot-logo img{
+  border-radius:50%;
+  object-fit:cover;
+}
   .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
   section{padding:88px 0;}
   .eyebrow{
@@ -161,7 +170,12 @@
     border:1px solid rgba(255,255,255,.14);
     display:flex; align-items:center; justify-content:center;
   }
-  .about-art img{width:64%; object-fit:contain;}
+  .about-art img{
+  width:64%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:50%;
+}
 
   /* DIFFERENTIALS */
   .diff-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:30px 20px; text-align:center;}
@@ -515,7 +529,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-about">
-        <div class="foot-logo"><img src="assets/logo.png" alt="AM TST" style="width:38px; height:38px; object-fit:contain;"><b>AM<span>TST</span></b></div>
+        <div class="foot-logo"><img src="assets/logo.png" alt="AM TST" style="width:38px; height:38px; object-fit:cover; border-radius:50%;"><b>AM<span>TST</span></b></div>
         <p>"Cuidamos de pessoas. Protegemos o presente. Construímos um futuro mais seguro."</p>
         <div class="social">
           <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
