@@ -1124,8 +1124,10 @@
 
     .app-pricing-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      max-width: 960px;
+      margin: 0 auto;
     }
 
     .app-pricing-card {
@@ -2478,81 +2480,63 @@
         <!-- PRICING & LICENSING TIERS -->
         <div class="app-plans-wrapper">
           <div class="app-plans-title">
-            <h4>Planos de Assinatura & Licenças GoField Pro</h4>
-            <p>Escolha o plano ideal para a sua operação individual, equipe de topografia ou planta industrial.</p>
+            <h4>Planos de Acesso GoField Pro</h4>
+            <p>Comece gratuitamente ou ative o plano anual completo para desbloquear todos os recursos sem limites.</p>
           </div>
 
           <div class="app-pricing-grid">
-            <!-- PLAN 1: INDIVIDUAL -->
+            <!-- PLAN 1: GRATUITO (FREE) -->
             <div class="app-pricing-card">
               <div class="app-pricing-header">
-                <span class="app-pricing-tag">Profissional Autônomo</span>
-                <h5>Plano Individual</h5>
-                <p style="color:#94A3B8; font-size:0.85rem;">Para topógrafos, consultores e técnicos de campo individuais.</p>
+                <span class="app-pricing-tag" style="color:#94A3B8;">Acesso Inicial Básico</span>
+                <h5>Plano Gratuito</h5>
+                <p style="color:#94A3B8; font-size:0.85rem;">Para navegação essencial e avaliação das ferramentas de campo.</p>
               </div>
               <div class="app-pricing-cost">
-                <span class="orig-price">R$ 149,00/mês</span>
-                <span class="current-price">R$ 97,00</span>
-                <span class="period">/mês</span>
+                <span class="orig-price" style="visibility:hidden;">R$ 0,00</span>
+                <span class="current-price">R$ 0,00</span>
+                <span class="period">/ sempre grátis</span>
               </div>
               <ul class="app-pricing-features">
-                <li><i class="fa-solid fa-check"></i> 1 Operador de Campo</li>
-                <li><i class="fa-solid fa-check"></i> Mapas PDF e GPS Ilimitados</li>
-                <li><i class="fa-solid fa-check"></i> Medição de Pilha de Madeira (m³)</li>
-                <li><i class="fa-solid fa-check"></i> Relatórios Técnicos em PDF com Fotos</li>
-                <li><i class="fa-solid fa-check"></i> Navegação 100% Offline</li>
+                <li><i class="fa-solid fa-check"></i> <strong>Até 2 Mapas PDF ativos</strong> simultâneos</li>
+                <li><i class="fa-solid fa-check"></i> GPS de alta precisão em tempo real</li>
+                <li><i class="fa-solid fa-check"></i> Marcação de Waypoints & Pontos de Interesse</li>
+                <li><i class="fa-solid fa-check"></i> Desenho e medição básica de polígonos/áreas</li>
+                <li><i class="fa-solid fa-check"></i> Gravação e rastreamento de trilhas</li>
+                <li style="color:#64748B;"><i class="fa-solid fa-xmark" style="color:#EF4444;"></i> Sem download de satélite 100% offline</li>
+                <li style="color:#64748B;"><i class="fa-solid fa-xmark" style="color:#EF4444;"></i> Sem cubagem de pilhas de madeira</li>
+                <li style="color:#64748B;"><i class="fa-solid fa-xmark" style="color:#EF4444;"></i> Sem rondas SST e laudos em PDF</li>
               </ul>
-              <a href="https://wa.me/5567991056313?text=Ol%C3%A1%2C%20gostaria%20de%20assinar%20o%20Plano%20Individual%20do%20GoField%20Pro%20(R%24%2097%2Fm%C3%AAs)." target="_blank" class="btn btn-secondary" style="width:100%; text-align:center; justify-content:center;">
-                Assinar Plano Individual
+              <a href="https://gofieldpro.com" target="_blank" class="btn btn-secondary" style="width:100%; text-align:center; justify-content:center;">
+                Acessar Gratuitamente
               </a>
             </div>
 
-            <!-- PLAN 2: EQUIPE (POPULAR) -->
+            <!-- PLAN 2: PRO ANUAL (OFERTA EXCLUSIVA R$ 99,98/ANO) -->
             <div class="app-pricing-card popular">
-              <span class="app-pricing-badge">Mais Popular</span>
+              <span class="app-pricing-badge">Acesso Total Premium • Mais Popular</span>
               <div class="app-pricing-header">
-                <span class="app-pricing-tag" style="color:#FBBF24;">Equipes de Engenharia</span>
-                <h5>Plano Equipe</h5>
-                <p style="color:#CBD5E1; font-size:0.85rem;">Ideal para escritórios de topografia e equipes técnicas de SST.</p>
+                <span class="app-pricing-tag" style="color:#FBBF24;">Licença Completa Anual</span>
+                <h5>GoField Pro Anual</h5>
+                <p style="color:#CBD5E1; font-size:0.85rem;">Libera 100% de todas as funcionalidades avançadas sem qualquer limitação.</p>
               </div>
               <div class="app-pricing-cost">
-                <span class="orig-price">R$ 390,00/mês</span>
-                <span class="current-price" style="color:#10B981;">R$ 289,00</span>
-                <span class="period">/mês</span>
+                <span class="orig-price">De R$ 199,90</span>
+                <span class="current-price" style="color:#10B981;">R$ 99,98</span>
+                <span class="period">/ano (equivale a apenas R$ 8,33/mês)</span>
               </div>
               <ul class="app-pricing-features">
-                <li><i class="fa-solid fa-check"></i> <strong>Até 5 Técnicos de Campo</strong></li>
-                <li><i class="fa-solid fa-check"></i> Painel de Gestão da Frota & Odômetro</li>
-                <li><i class="fa-solid fa-check"></i> Cubagem Florestal e Laudos em Lote</li>
-                <li><i class="fa-solid fa-check"></i> Backup e Sincronização em Nuvem</li>
-                <li><i class="fa-solid fa-check"></i> Suporte Prioritário AM TST</li>
+                <li><i class="fa-solid fa-check"></i> <strong>Mapas PDF Georreferenciados Ilimitados</strong></li>
+                <li><i class="fa-solid fa-check"></i> <strong>Imagens de Satélite 100% Offline</strong> (sem internet)</li>
+                <li><i class="fa-solid fa-check"></i> <strong>Cubagem Florestal de Pilhas (Smalian & Huber)</strong></li>
+                <li><i class="fa-solid fa-check"></i> <strong>Rondas, Inspeções & Checklists SST com Fotos</strong></li>
+                <li><i class="fa-solid fa-check"></i> <strong>Emissão Instantânea de Laudos Periciais em PDF</strong></li>
+                <li><i class="fa-solid fa-check"></i> <strong>Exportação & Importação de Arquivos KML / KMZ</strong></li>
+                <li><i class="fa-solid fa-check"></i> <strong>Monitoramento da Frota & Odômetro em Tempo Real</strong></li>
+                <li><i class="fa-solid fa-check"></i> <strong>Suporte Técnico Prioritário AM TST</strong></li>
               </ul>
-              <a href="https://wa.me/5567991056313?text=Ol%C3%A1%2C%20gostaria%20de%20assinar%20o%20Plano%20Equipe%20do%20GoField%20Pro%20(R%24%20289%2Fm%C3%AAs)." target="_blank" class="btn btn-primary" style="width:100%; text-align:center; justify-content:center;">
-                <i class="fa-solid fa-bolt"></i> Assinar Plano Equipe
-              </a>
-            </div>
-
-            <!-- PLAN 3: CORPORATIVO -->
-            <div class="app-pricing-card">
-              <div class="app-pricing-header">
-                <span class="app-pricing-tag">Grandes Empresas & Usinas</span>
-                <h5>Florestal & Corporativo</h5>
-                <p style="color:#94A3B8; font-size:0.85rem;">Grandes operações florestais, usinas sucroalcooleiras e mineradoras.</p>
-              </div>
-              <div class="app-pricing-cost">
-                <span class="orig-price">R$ 950,00/mês</span>
-                <span class="current-price">R$ 690,00</span>
-                <span class="period">/mês</span>
-              </div>
-              <ul class="app-pricing-features">
-                <li><i class="fa-solid fa-check"></i> <strong>15 a 30 Operadores simultâneos</strong></li>
-                <li><i class="fa-solid fa-check"></i> Logotipo Personalizado nos Laudos</li>
-                <li><i class="fa-solid fa-check"></i> Faturamento PJ & Contrato Corporativo</li>
-                <li><i class="fa-solid fa-check"></i> Treinamento e Implantação Dedicada</li>
-                <li><i class="fa-solid fa-check"></i> SLA Garantido e Backup Contínuo</li>
-              </ul>
-              <a href="https://wa.me/5567991056313?text=Ol%C3%A1%2C%20gostaria%20de%20uma%20proposta%20do%20Plano%20Corporativo%20Florestal%20do%20GoField%20Pro." target="_blank" class="btn btn-secondary" style="width:100%; text-align:center; justify-content:center;">
-                Falar com Consultor PJ
+              <a href="https://wa.me/5567991056313?text=Ol%C3%A1%2C%20gostaria%20de%20assinar%20o%20Plano%20GoField%20Pro%20Anual%20(R%24%2099%2C98%2Fano)." target="_blank" class="btn btn-primary" style="width:100%; text-align:center; justify-content:center;">
+                <i class="fa-solid fa-bolt"></i> Assinar GoField Pro Anual (R$ 99,98)
               </a>
             </div>
           </div>
