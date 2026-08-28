@@ -937,9 +937,295 @@
       color: var(--primary);
     }
 
-    .svc-action-link:hover {
-      color: var(--primary-hover);
-      gap: 12px;
+    /* APPS & SOFTWARES SECTION */
+    .apps-section {
+      background: linear-gradient(180deg, #06121E 0%, #0B1C2D 50%, #06121E 100%);
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      padding: 96px 0;
+      border-top: 1px solid rgba(16, 185, 129, 0.15);
+      border-bottom: 1px solid rgba(16, 185, 129, 0.15);
+    }
+
+    .apps-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 400px;
+      background: radial-gradient(ellipse at top, rgba(16, 185, 129, 0.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .apps-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 56px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .apps-header h2 {
+      color: #FFFFFF;
+      font-size: 2.5rem;
+      margin-top: 14px;
+      margin-bottom: 16px;
+    }
+
+    .apps-header p {
+      color: #94A3B8;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .app-hero-card {
+      background: rgba(11, 28, 45, 0.85);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 35px rgba(16, 185, 129, 0.15);
+      backdrop-filter: blur(12px);
+      margin-bottom: 48px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .app-hero-top {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .app-badges-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .app-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .app-badge-pill.emerald {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34D399;
+    }
+
+    .app-badge-pill.sky {
+      background: rgba(14, 165, 233, 0.15);
+      border: 1px solid rgba(14, 165, 233, 0.4);
+      color: #38BDF8;
+    }
+
+    .app-badge-pill.amber {
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #FBBF24;
+    }
+
+    .app-hero-info h3 {
+      font-size: 2.2rem;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .app-hero-info p {
+      color: #CBD5E1;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .app-features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .app-feature-box {
+      background: rgba(6, 18, 30, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 24px 20px;
+      transition: all 0.3s ease;
+    }
+
+    .app-feature-box:hover {
+      transform: translateY(-4px);
+      border-color: rgba(16, 185, 129, 0.5);
+      background: rgba(6, 18, 30, 0.95);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .app-feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34D399;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 14px;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .app-feature-box h4 {
+      color: #FFFFFF;
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .app-feature-box p {
+      color: #94A3B8;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    .app-plans-wrapper {
+      margin-top: 48px;
+    }
+
+    .app-plans-title {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .app-plans-title h4 {
+      color: #FFFFFF;
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+
+    .app-plans-title p {
+      color: #94A3B8;
+      font-size: 0.95rem;
+    }
+
+    .app-pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .app-pricing-card {
+      background: rgba(6, 18, 30, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .app-pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(16, 185, 129, 0.5);
+    }
+
+    .app-pricing-card.popular {
+      background: linear-gradient(165deg, rgba(5, 150, 105, 0.2) 0%, rgba(11, 28, 45, 0.95) 100%);
+      border: 2px solid #10B981;
+      box-shadow: 0 0 35px rgba(16, 185, 129, 0.25);
+    }
+
+    .app-pricing-badge {
+      position: absolute;
+      top: -12px;
+      right: 24px;
+      background: #10B981;
+      color: #06121E;
+      font-weight: 800;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+    }
+
+    .app-pricing-header {
+      margin-bottom: 24px;
+    }
+
+    .app-pricing-header h5 {
+      color: #FFFFFF;
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+
+    .app-pricing-tag {
+      font-size: 0.8rem;
+      color: #34D399;
+      font-weight: 600;
+    }
+
+    .app-pricing-cost {
+      margin: 20px 0;
+    }
+
+    .app-pricing-cost .orig-price {
+      font-size: 0.85rem;
+      text-decoration: line-through;
+      color: #64748B;
+      display: block;
+      font-weight: 600;
+    }
+
+    .app-pricing-cost .current-price {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .app-pricing-cost .period {
+      font-size: 0.85rem;
+      color: #94A3B8;
+      font-weight: 600;
+    }
+
+    .app-pricing-features {
+      margin-bottom: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 20px;
+    }
+
+    .app-pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #CBD5E1;
+      font-size: 0.88rem;
+      margin-bottom: 10px;
+    }
+
+    .app-pricing-features li i {
+      color: #10B981;
+      margin-top: 3px;
+      font-size: 0.8rem;
     }
 
     /* ABOUT SECTION */
@@ -1687,6 +1973,7 @@
         <a href="#inicio" class="active">Início</a>
         <a href="#diagnostico">Diagnóstico SST</a>
         <a href="#servicos">Serviços</a>
+        <a href="#apps" style="color: #10B981; font-weight: 700;"><i class="fa-solid fa-mobile-screen-button"></i> Apps</a>
         <a href="#sobre">Sobre Nós</a>
         <a href="#diferenciais">Diferenciais</a>
         <a href="#como-funciona">Como Funciona</a>
@@ -2090,6 +2377,185 @@
             </ul>
           </div>
           <a href="#orcamento" class="svc-action-link">Consultar Documentos <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPS & SOFTWARES SECTION -->
+  <section class="apps-section" id="apps">
+    <div class="container">
+      <div class="apps-header">
+        <span class="badge-pill" style="background:rgba(16,185,129,0.15); color:var(--accent); border-color:rgba(16,185,129,0.3);">
+          <i class="fa-solid fa-mobile-screen-button"></i> Softwares & Inovação AM TST
+        </span>
+        <h2>Ecossistema de Aplicativos de Campo & Gestão</h2>
+        <p>Tecnologia proprietária desenvolvida para acelerar a produtividade, a segurança e a conformidade técnica das operações em campo.</p>
+      </div>
+
+      <!-- FEATURED APP CARD: GOFIELD PRO -->
+      <div class="app-hero-card" id="gofield-pro">
+        <div class="app-hero-top">
+          <div class="app-hero-info">
+            <div class="app-badges-row">
+              <span class="app-badge-pill emerald"><i class="fa-solid fa-satellite"></i> GPS & Geoprocessamento</span>
+              <span class="app-badge-pill sky"><i class="fa-solid fa-cloud-arrow-down"></i> 100% PWA Offline</span>
+              <span class="app-badge-pill amber"><i class="fa-solid fa-tree"></i> Cubagem Florestal Smalian</span>
+            </div>
+            <h3>
+              <span>GoField Pro</span>
+              <span style="font-size:0.85rem; font-weight:800; background:#10B981; color:#06121E; padding:3px 10px; border-radius:9999px;">v2.6 OFICIAL</span>
+            </h3>
+            <p>
+              O <strong>GoField Pro</strong> é a plataforma definitiva para engenheiros, técnicos de segurança, topógrafos e operadores de campo. Navegue com sua localização GPS exata sobre plantas em PDF georreferenciadas, execute cubagem de pilhas de madeira (m³), registre rondas e inspeções fotográficas de SST e emita laudos periciais instantâneos — <strong>mesmo sem nenhum sinal de internet</strong>.
+            </p>
+            <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:20px;">
+              <a href="https://wa.me/5567991056313?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20licen%C3%A7a%20do%20GoField%20Pro." target="_blank" class="btn btn-primary">
+                <i class="fa-brands fa-whatsapp"></i> Contratar / Falar com Especialista
+              </a>
+              <a href="https://gofieldpro.com" target="_blank" class="btn btn-secondary">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Acessar o Web App
+              </a>
+            </div>
+          </div>
+
+          <!-- APP VISUAL / STATS BOX -->
+          <div style="background:rgba(6,18,30,0.85); border:1px solid rgba(16,185,129,0.3); border-radius:var(--radius-md); padding:28px; box-shadow:var(--shadow-md);">
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:14px;">
+              <div style="width:48px; height:48px; border-radius:12px; background:#10B981; color:#06121E; display:flex; align-items:center; justify-content:center; font-size:1.4rem;">
+                <i class="fa-solid fa-map-location-dot"></i>
+              </div>
+              <div>
+                <h4 style="color:#FFF; font-size:1.15rem; margin-bottom:2px;">GoField Pro Mobile & Web</h4>
+                <span style="color:#94A3B8; font-size:0.8rem;">PWA Multiplataforma (iOS, Android, Windows)</span>
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+              <div style="background:rgba(255,255,255,0.03); padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem; color:#94A3B8; display:block;">Mapas PDF</span>
+                <b style="font-size:1.1rem; color:#34D399;">Ilimitados</b>
+              </div>
+              <div style="background:rgba(255,255,255,0.03); padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem; color:#94A3B8; display:block;">Precisão GPS</span>
+                <b style="font-size:1.1rem; color:#38BDF8;">Submétrica</b>
+              </div>
+              <div style="background:rgba(255,255,255,0.03); padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem; color:#94A3B8; display:block;">Funcionamento</span>
+                <b style="font-size:1.1rem; color:#FBBF24;">100% Offline</b>
+              </div>
+              <div style="background:rgba(255,255,255,0.03); padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem; color:#94A3B8; display:block;">Laudos Técnicos</span>
+                <b style="font-size:1.1rem; color:#A7F3D0;">Automáticos</b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 CORE FEATURES GRID -->
+        <div class="app-features-grid">
+          <div class="app-feature-box">
+            <div class="app-feature-icon"><i class="fa-solid fa-map"></i></div>
+            <h4>Mapas PDF Georreferenciados</h4>
+            <p>Carregue projetos, plantas topográficas e mapas e navegue com o GPS em tempo real sobre a imagem vetorial.</p>
+          </div>
+          <div class="app-feature-box">
+            <div class="app-feature-icon"><i class="fa-solid fa-tree"></i></div>
+            <h4>Cubagem de Madeira (m³)</h4>
+            <p>Cálculo volumétrico estéreo e sólido de toras e pilhas utilizando métodos analíticos Smalian e Huber.</p>
+          </div>
+          <div class="app-feature-box">
+            <div class="app-feature-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+            <h4>Rondas & Checklists SST</h4>
+            <p>Inspeções de segurança com fotos, coordenadas GPS, triagem de anomalias e odômetro da frota em tempo real.</p>
+          </div>
+          <div class="app-feature-box">
+            <div class="app-feature-icon"><i class="fa-solid fa-file-pdf"></i></div>
+            <h4>Emissão de Laudos em PDF</h4>
+            <p>Gere relatórios periciais profissionais instantâneos com a marca da sua empresa, fotos de campo e mapa estático.</p>
+          </div>
+        </div>
+
+        <!-- PRICING & LICENSING TIERS -->
+        <div class="app-plans-wrapper">
+          <div class="app-plans-title">
+            <h4>Planos de Assinatura & Licenças GoField Pro</h4>
+            <p>Escolha o plano ideal para a sua operação individual, equipe de topografia ou planta industrial.</p>
+          </div>
+
+          <div class="app-pricing-grid">
+            <!-- PLAN 1: INDIVIDUAL -->
+            <div class="app-pricing-card">
+              <div class="app-pricing-header">
+                <span class="app-pricing-tag">Profissional Autônomo</span>
+                <h5>Plano Individual</h5>
+                <p style="color:#94A3B8; font-size:0.85rem;">Para topógrafos, consultores e técnicos de campo individuais.</p>
+              </div>
+              <div class="app-pricing-cost">
+                <span class="orig-price">R$ 149,00/mês</span>
+                <span class="current-price">R$ 97,00</span>
+                <span class="period">/mês</span>
+              </div>
+              <ul class="app-pricing-features">
+                <li><i class="fa-solid fa-check"></i> 1 Operador de Campo</li>
+                <li><i class="fa-solid fa-check"></i> Mapas PDF e GPS Ilimitados</li>
+                <li><i class="fa-solid fa-check"></i> Medição de Pilha de Madeira (m³)</li>
+                <li><i class="fa-solid fa-check"></i> Relatórios Técnicos em PDF com Fotos</li>
+                <li><i class="fa-solid fa-check"></i> Navegação 100% Offline</li>
+              </ul>
+              <a href="https://wa.me/5567991056313?text=Ol%C3%A1%2C%20gostaria%20de%20assinar%20o%20Plano%20Individual%20do%20GoField%20Pro%20(R%24%2097%2Fm%C3%AAs)." target="_blank" class="btn btn-secondary" style="width:100%; text-align:center; justify-content:center;">
+                Assinar Plano Individual
+              </a>
+            </div>
+
+            <!-- PLAN 2: EQUIPE (POPULAR) -->
+            <div class="app-pricing-card popular">
+              <span class="app-pricing-badge">Mais Popular</span>
+              <div class="app-pricing-header">
+                <span class="app-pricing-tag" style="color:#FBBF24;">Equipes de Engenharia</span>
+                <h5>Plano Equipe</h5>
+                <p style="color:#CBD5E1; font-size:0.85rem;">Ideal para escritórios de topografia e equipes técnicas de SST.</p>
+              </div>
+              <div class="app-pricing-cost">
+                <span class="orig-price">R$ 390,00/mês</span>
+                <span class="current-price" style="color:#10B981;">R$ 289,00</span>
+                <span class="period">/mês</span>
+              </div>
+              <ul class="app-pricing-features">
+                <li><i class="fa-solid fa-check"></i> <strong>Até 5 Técnicos de Campo</strong></li>
+                <li><i class="fa-solid fa-check"></i> Painel de Gestão da Frota & Odômetro</li>
+                <li><i class="fa-solid fa-check"></i> Cubagem Florestal e Laudos em Lote</li>
+                <li><i class="fa-solid fa-check"></i> Backup e Sincronização em Nuvem</li>
+                <li><i class="fa-solid fa-check"></i> Suporte Prioritário AM TST</li>
+              </ul>
+              <a href="https://wa.me/5567991056313?text=Ol%C3%A1%2C%20gostaria%20de%20assinar%20o%20Plano%20Equipe%20do%20GoField%20Pro%20(R%24%20289%2Fm%C3%AAs)." target="_blank" class="btn btn-primary" style="width:100%; text-align:center; justify-content:center;">
+                <i class="fa-solid fa-bolt"></i> Assinar Plano Equipe
+              </a>
+            </div>
+
+            <!-- PLAN 3: CORPORATIVO -->
+            <div class="app-pricing-card">
+              <div class="app-pricing-header">
+                <span class="app-pricing-tag">Grandes Empresas & Usinas</span>
+                <h5>Florestal & Corporativo</h5>
+                <p style="color:#94A3B8; font-size:0.85rem;">Grandes operações florestais, usinas sucroalcooleiras e mineradoras.</p>
+              </div>
+              <div class="app-pricing-cost">
+                <span class="orig-price">R$ 950,00/mês</span>
+                <span class="current-price">R$ 690,00</span>
+                <span class="period">/mês</span>
+              </div>
+              <ul class="app-pricing-features">
+                <li><i class="fa-solid fa-check"></i> <strong>15 a 30 Operadores simultâneos</strong></li>
+                <li><i class="fa-solid fa-check"></i> Logotipo Personalizado nos Laudos</li>
+                <li><i class="fa-solid fa-check"></i> Faturamento PJ & Contrato Corporativo</li>
+                <li><i class="fa-solid fa-check"></i> Treinamento e Implantação Dedicada</li>
+                <li><i class="fa-solid fa-check"></i> SLA Garantido e Backup Contínuo</li>
+              </ul>
+              <a href="https://wa.me/5567991056313?text=Ol%C3%A1%2C%20gostaria%20de%20uma%20proposta%20do%20Plano%20Corporativo%20Florestal%20do%20GoField%20Pro." target="_blank" class="btn btn-secondary" style="width:100%; text-align:center; justify-content:center;">
+                Falar com Consultor PJ
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
