@@ -2040,11 +2040,22 @@
       .footer-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+      .app-hero-top {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .app-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .app-pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 580px;
+      }
     }
 
     @media (max-width: 768px) {
       section {
-        padding: 64px 0;
+        padding: 56px 0;
       }
       .top-bar {
         display: none;
@@ -2101,6 +2112,73 @@
       }
       .wa-tooltip {
         display: none;
+      }
+
+      /* APPS SECTION MOBILE HARDENING */
+      .apps-section {
+        padding: 48px 0;
+      }
+      .app-hero-card {
+        padding: 24px 16px;
+        border-radius: var(--radius-md);
+        margin-bottom: 36px;
+      }
+      .app-hero-info h3 {
+        font-size: 1.5rem;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .app-hero-info p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+      .app-badges-row {
+        gap: 6px;
+      }
+      .app-badge-pill {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+      }
+      .app-features-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-bottom: 32px;
+      }
+      .app-feature-box {
+        padding: 20px 16px;
+      }
+      .app-plans-wrapper {
+        margin-top: 36px;
+      }
+      .app-plans-title h4 {
+        font-size: 1.35rem;
+      }
+      .app-pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 0 4px;
+      }
+      .app-pricing-card {
+        padding: 26px 18px;
+      }
+      .app-pricing-badge {
+        right: 14px;
+        font-size: 0.68rem;
+        padding: 3px 10px;
+      }
+      .app-pricing-cost .current-price {
+        font-size: 1.85rem;
+      }
+      .checkout-modal-box {
+        padding: 24px 16px;
+        border-radius: var(--radius-md);
+      }
+      .checkout-modal-header h3 {
+        font-size: 1.25rem;
+      }
+      .pix-qr-container img {
+        width: 150px;
+        height: 150px;
       }
     }
   </style>
