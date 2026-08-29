@@ -3571,16 +3571,12 @@
               checkoutStepForm.style.display = 'none';
               checkoutStepPix.style.display = 'block';
             } else {
-              throw new Error(data.message || data.error || 'Falha ao gerar cobrança.');
+              const errorMsg = data.message || data.error || 'Falha ao conectar com o Asaas.';
+              alert('Atenção: ' + errorMsg + '\n\nVerifique se o seu CPF/CNPJ é válido e se as variáveis de ambiente do Asaas estão configuradas na Vercel.');
             }
           } catch (err) {
-            console.warn('Checkout serverless notice:', err);
-            // Fallback generator
-            const fallbackPixPayload = '00020126580014BR.GOV.BCB.PIX0136' + (cpfCnpj.replace(/\D/g, '') || '45914619000100') + '520400005303986540599.985802BR5925AM TST ENGENHARIA SST6011TRES LAGOAS62070503***6304';
-            pixPayloadInput.value = fallbackPixPayload;
-            pixQrCodeImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=' + encodeURIComponent(fallbackPixPayload);
-            checkoutStepForm.style.display = 'none';
-            checkoutStepPix.style.display = 'block';
+            console.error('Checkout error:', err);
+            alert('Não foi possível se comunicar com o servidor de pagamentos. Verifique sua conexão ou se a chave ASAAS_API_KEY está configurada na Vercel.');
           } finally {
             btnSubmitCheckout.disabled = false;
             btnSubmitCheckout.innerHTML = '<i class="fa-solid fa-qrcode"></i> Gerar Pagamento PIX Instantâneo';
