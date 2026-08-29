@@ -3292,115 +3292,6 @@
       quoteForm.reset();
     });
 
-    // 6. GoField Pro Instant PIX Checkout Modal Handler
-    const checkoutModal = document.getElementById('checkoutModalOverlay');
-    const btnCloseCheckout = document.getElementById('btnCloseCheckout');
-    const checkoutForm = document.getElementById('checkoutForm');
-    const checkoutStepForm = document.getElementById('checkoutStepForm');
-    const checkoutStepPix = document.getElementById('checkoutStepPix');
-    const btnSubmitCheckout = document.getElementById('btnSubmitCheckout');
-    const pixQrCodeImg = document.getElementById('pixQrCodeImg');
-    const pixPayloadInput = document.getElementById('pixPayloadInput');
-    const btnCopyPix = document.getElementById('btnCopyPix');
-    const btnBackToForm = document.getElementById('btnBackToForm');
-
-    function openCheckoutModal() {
-      checkoutModal.style.display = 'flex';
-      checkoutStepForm.style.display = 'block';
-      checkoutStepPix.style.display = 'none';
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeCheckoutModal() {
-      checkoutModal.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
-
-    document.querySelectorAll('#btnOpenCheckout, .btn-open-checkout').forEach(btn => {
-      btn.addEventListener('click', openCheckoutModal);
-    });
-
-    btnCloseCheckout.addEventListener('click', closeCheckoutModal);
-
-    checkoutModal.addEventListener('click', (e) => {
-      if (e.target === checkoutModal) closeCheckoutModal();
-    });
-
-    btnBackToForm.addEventListener('click', () => {
-      checkoutStepPix.style.display = 'none';
-      checkoutStepForm.style.display = 'block';
-    });
-
-    btnCopyPix.addEventListener('click', () => {
-      pixPayloadInput.select();
-      pixPayloadInput.setSelectionRange(0, 99999);
-      navigator.clipboard.writeText(pixPayloadInput.value);
-      btnCopyPix.innerHTML = '<i class="fa-solid fa-check"></i> Copiado!';
-      btnCopyPix.style.background = '#059669';
-      btnCopyPix.style.color = '#FFFFFF';
-      setTimeout(() => {
-        btnCopyPix.innerHTML = '<i class="fa-solid fa-copy"></i> Copiar Código';
-        btnCopyPix.style.background = '#10B981';
-        btnCopyPix.style.color = '#06121E';
-      }, 3000);
-    });
-
-    checkoutForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const email = document.getElementById('checkoutEmail').value.trim();
-      const name = document.getElementById('checkoutName').value.trim();
-      const cpfCnpj = document.getElementById('checkoutCpf').value.trim();
-      const phone = document.getElementById('checkoutPhone').value.trim();
-
-      if (!email || !name || !cpfCnpj) {
-        alert('Por favor, preencha todos os campos obrigatórios.');
-        return;
-      }
-
-      btnSubmitCheckout.disabled = true;
-      btnSubmitCheckout.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Gerando PIX Oficial Asaas...';
-
-      try {
-        const res = await fetch('https://go-field-pro.vercel.app/api/checkout', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            uid: email,
-            email: email,
-            name: name,
-            cpfCnpj: cpfCnpj,
-            phone: phone,
-            planId: 'pro_anual'
-          })
-        });
-
-        const data = await res.json();
-
-        if (res.ok && data.success && data.payment) {
-          const payload = data.payment.pixPayload || '';
-          pixPayloadInput.value = payload;
-          pixQrCodeImg.src = data.payment.pixQrCode || ('https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=' + encodeURIComponent(payload));
-          checkoutStepForm.style.display = 'none';
-          checkoutStepPix.style.display = 'block';
-        } else {
-          // Fallback if API returned warning/sandbox notice
-          throw new Error(data.message || data.error || 'Falha ao gerar cobrança.');
-        }
-      } catch (err) {
-        console.warn('Checkout serverless notice:', err);
-        // Fallback generator to ensure the user is NEVER blocked from paying
-        const fallbackPixPayload = '00020126580014BR.GOV.BCB.PIX0136' + (cpfCnpj.replace(/\D/g, '') || '45914619000100') + '520400005303986540599.985802BR5925AM TST ENGENHARIA SST6011TRES LAGOAS62070503***6304';
-        pixPayloadInput.value = fallbackPixPayload;
-        pixQrCodeImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=' + encodeURIComponent(fallbackPixPayload);
-        checkoutStepForm.style.display = 'none';
-        checkoutStepPix.style.display = 'block';
-      } finally {
-        btnSubmitCheckout.disabled = false;
-        btnSubmitCheckout.innerHTML = '<i class="fa-solid fa-qrcode"></i> Gerar Pagamento PIX Instantâneo';
-      }
-    });
-  </script>
-
   <!-- MODAL DE CHECKOUT PIX ASAAS -->
   <div class="checkout-modal-overlay" id="checkoutModalOverlay">
     <div class="checkout-modal-box">
@@ -3493,5 +3384,131 @@
 
     </div>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 6. GoField Pro Instant PIX Checkout Modal Handler
+      const checkoutModal = document.getElementById('checkoutModalOverlay');
+      const btnCloseCheckout = document.getElementById('btnCloseCheckout');
+      const checkoutForm = document.getElementById('checkoutForm');
+      const checkoutStepForm = document.getElementById('checkoutStepForm');
+      const checkoutStepPix = document.getElementById('checkoutStepPix');
+      const btnSubmitCheckout = document.getElementById('btnSubmitCheckout');
+      const pixQrCodeImg = document.getElementById('pixQrCodeImg');
+      const pixPayloadInput = document.getElementById('pixPayloadInput');
+      const btnCopyPix = document.getElementById('btnCopyPix');
+      const btnBackToForm = document.getElementById('btnBackToForm');
+
+      function openCheckoutModal() {
+        if (!checkoutModal) return;
+        checkoutModal.style.display = 'flex';
+        checkoutStepForm.style.display = 'block';
+        checkoutStepPix.style.display = 'none';
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeCheckoutModal() {
+        if (!checkoutModal) return;
+        checkoutModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+
+      document.querySelectorAll('#btnOpenCheckout, .btn-open-checkout').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          openCheckoutModal();
+        });
+      });
+
+      if (btnCloseCheckout) {
+        btnCloseCheckout.addEventListener('click', closeCheckoutModal);
+      }
+
+      if (checkoutModal) {
+        checkoutModal.addEventListener('click', (e) => {
+          if (e.target === checkoutModal) closeCheckoutModal();
+        });
+      }
+
+      if (btnBackToForm) {
+        btnBackToForm.addEventListener('click', () => {
+          checkoutStepPix.style.display = 'none';
+          checkoutStepForm.style.display = 'block';
+        });
+      }
+
+      if (btnCopyPix) {
+        btnCopyPix.addEventListener('click', () => {
+          pixPayloadInput.select();
+          pixPayloadInput.setSelectionRange(0, 99999);
+          navigator.clipboard.writeText(pixPayloadInput.value);
+          btnCopyPix.innerHTML = '<i class="fa-solid fa-check"></i> Copiado!';
+          btnCopyPix.style.background = '#059669';
+          btnCopyPix.style.color = '#FFFFFF';
+          setTimeout(() => {
+            btnCopyPix.innerHTML = '<i class="fa-solid fa-copy"></i> Copiar Código';
+            btnCopyPix.style.background = '#10B981';
+            btnCopyPix.style.color = '#06121E';
+          }, 3000);
+        });
+      }
+
+      if (checkoutForm) {
+        checkoutForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const email = document.getElementById('checkoutEmail').value.trim();
+          const name = document.getElementById('checkoutName').value.trim();
+          const cpfCnpj = document.getElementById('checkoutCpf').value.trim();
+          const phone = document.getElementById('checkoutPhone').value.trim();
+
+          if (!email || !name || !cpfCnpj) {
+            alert('Por favor, preencha todos os campos obrigatórios.');
+            return;
+          }
+
+          btnSubmitCheckout.disabled = true;
+          btnSubmitCheckout.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Gerando PIX Oficial Asaas...';
+
+          try {
+            const res = await fetch('https://go-field-pro.vercel.app/api/checkout', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                uid: email,
+                email: email,
+                name: name,
+                cpfCnpj: cpfCnpj,
+                phone: phone,
+                planId: 'pro_anual'
+              })
+            });
+
+            const data = await res.json();
+
+            if (res.ok && data.success && data.payment) {
+              const payload = data.payment.pixPayload || '';
+              pixPayloadInput.value = payload;
+              pixQrCodeImg.src = data.payment.pixQrCode || ('https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=' + encodeURIComponent(payload));
+              checkoutStepForm.style.display = 'none';
+              checkoutStepPix.style.display = 'block';
+            } else {
+              throw new Error(data.message || data.error || 'Falha ao gerar cobrança.');
+            }
+          } catch (err) {
+            console.warn('Checkout serverless notice:', err);
+            // Fallback generator
+            const fallbackPixPayload = '00020126580014BR.GOV.BCB.PIX0136' + (cpfCnpj.replace(/\D/g, '') || '45914619000100') + '520400005303986540599.985802BR5925AM TST ENGENHARIA SST6011TRES LAGOAS62070503***6304';
+            pixPayloadInput.value = fallbackPixPayload;
+            pixQrCodeImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=' + encodeURIComponent(fallbackPixPayload);
+            checkoutStepForm.style.display = 'none';
+            checkoutStepPix.style.display = 'block';
+          } finally {
+            btnSubmitCheckout.disabled = false;
+            btnSubmitCheckout.innerHTML = '<i class="fa-solid fa-qrcode"></i> Gerar Pagamento PIX Instantâneo';
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
