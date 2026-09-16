@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso & Direitos Autorais — GoField Pro</title>
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --alert-bg: #eff6ff;
+            --alert-border: #3b82f6;
+            --warn-bg: #fffbeb;
+            --warn-border: #f59e0b;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #38bdf8;
+                --primary-dark: #0284c7;
+                --text: #f1f5f9;
+                --text-light: #94a3b8;
+                --bg: #0f172a;
+                --card-bg: #1e293b;
+                --border: #334155;
+                --alert-bg: #1e3a8a33;
+                --alert-border: #38bdf8;
+                --warn-bg: #78350f33;
+                --warn-border: #fbbf24;
+            }
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            margin: 0;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+        }
+        header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        .meta {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        h2 {
+            color: var(--text);
+            font-size: 1.35rem;
+            margin-top: 32px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+        h3 {
+            font-size: 1.1rem;
+            margin-top: 20px;
+            color: var(--text);
+        }
+        p, li {
+            font-size: 1rem;
+        }
+        ul, ol {
+            padding-left: 24px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .callout {
+            background-color: var(--alert-bg);
+            border-left: 4px solid var(--alert-border);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 24px 0;
+        }
+        .callout-warn {
+            background-color: var(--warn-bg);
+            border-left: 4px solid var(--warn-border);
+        }
+        .nav-links {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .nav-link {
+            display: inline-block;
+            padding: 6px 14px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            background: rgba(2, 132, 199, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-links">
+            <a href="index.html#apps" class="nav-link" style="font-weight:700;">← Voltar ao site AM TST (Apps)</a>
+            <a href="legal.html" class="nav-link">Central Legal</a>
+            <a href="politica-de-privacidade.html" class="nav-link">Política de Privacidade</a>
+            <a href="exclusao-de-dados.html" class="nav-link">Exclusão de Dados</a>
+            <a href="auditoria-de-privacidade.html" class="nav-link">Auditoria LGPD</a>
+        </div>
+
+        <header>
+            <h1>Termos de Uso & Direitos Autorais</h1>
+            <div class="meta">
+                <strong>Aplicativo:</strong> GoField Pro (Versão 3.0.0-native) • 
+                <strong>Titular:</strong> AM TST SAÚDE E SEGURANÇA DO TRABALHO (CNPJ: 65.130.609/0001-20) • 
+                <strong>Site Oficial:</strong> <a href="https://amtst.vercel.app" target="_blank" style="color:var(--primary);">amtst.vercel.app</a>
+            </div>
+        </header>
+
+        <p>Estes Termos de Uso regulam o acesso e a utilização do aplicativo <strong>GoField Pro</strong> (doravante "Aplicativo"), de titularidade e responsabilidade de <strong>AM TST SAÚDE E SEGURANÇA DO TRABALHO</strong>, inscrita no CNPJ sob o nº <strong>65.130.609/0001-20</strong> (doravante "Provedor").</p>
+
+        <h2>1. Objeto e Escopo dos Serviços</h2>
+        <p>O GoField Pro é uma ferramenta de produtividade e cálculo em campo projetada sob arquitetura <strong>Offline-First</strong> para atividades agroflorestais, topografia, navegação GNSS e geoprocessamento. O Software inclui:</p>
+        <ul>
+            <li>Demarcação de waypoints e cálculo de áreas, perímetros e distâncias geodésicas.</li>
+            <li>Gravação contínua de trilhas terrestres via receptor GNSS do aparelho em 1º e 2º plano.</li>
+            <li>Importação, renderização vetorial e exportação de dados KML/KMZ.</li>
+            <li>Calibração de plantas cartográficas e pranchas PDF/GeoPDF via modelos afins e coordenadas métricas UTM (SIRGAS 2000 / WGS84).</li>
+            <li>Estimativa de cubagem de madeira empilhada (estéreo e metros cúbicos sólidos).</li>
+            <li>Registro local de ocorrências florestais e gestão de vistorias técnicas.</li>
+            <li>Download de blocos de mapas abertos (OpenStreetMap e OpenTopoMap) para navegação sem sinal em raio de até 150 km.</li>
+        </ul>
+
+        <h2>2. Delimitação Equilibrada de Responsabilidades</h2>
+        <h3>2.1. Deveres do Provedor</h3>
+        <ol>
+            <li><strong>Segurança e Integridade:</strong> Desenvolver e disponibilizar o software com observância aos padrões de segurança da informação (LGPD, Art. 46) e isolamento em sandbox do sistema operacional Android.</li>
+            <li><strong>Transparência no Tratamento:</strong> Garantir que o fluxo de dados ocorra estritamente conforme descrito na Política de Privacidade, sem envio oculto de dados a terceiros.</li>
+            <li><strong>Manutenção do Software:</strong> Empregar esforços técnicos razoáveis para correções e atualizações de estabilidade.</li>
+        </ol>
+
+        <h3>2.2. Deveres do Usuário</h3>
+        <ol>
+            <li><strong>Guarda e Backup:</strong> Gerenciar o acesso físico e digital ao seu aparelho e realizar exportações periódicas de seus dados para evitar perdas em caso de avaria, perda ou formatação do smartphone.</li>
+            <li><strong>Exatidão Técnica:</strong> Responsabilizar-se pela veracidade das coordenadas, medições e calibragens manuais de pranchas PDF inseridas.</li>
+            <li><strong>Destinação de Exportações:</strong> Responder pelos destinatários e canais de terceiros escolhidos ao compartilhar seus laudos e projetos.</li>
+            <li><strong>Legalidade em Campo:</strong> Observar as normas ambientais, agrárias e de respeito à propriedade de terceiros durante suas operações de campo.</li>
+        </ol>
+
+        <h2>3. Disclaimers Técnicos Profissionais</h2>
+        <div class="callout callout-warn">
+            <strong>AVISO TÉCNICO IMPORTANTE:</strong>
+            <ul>
+                <li><strong>Inexistência de ART Automática:</strong> O GoField Pro é uma ferramenta de apoio ao cálculo e navegação. Seu uso <strong>não substitui levantamento topográfico oficial</strong> nem a emissão de <strong>Anotação de Responsabilidade Técnica (ART/TRT)</strong> por profissional legalmente habilitado (CREA/CFT/CAU).</li>
+                <li><strong>Não Substituição de Canais de Emergência:</strong> O registro de incêndios e ocorrências florestais é para gestão interna de equipe. Situações de emergência devem ser comunicadas imediatamente aos órgãos públicos de socorro (<strong>Corpo de Bombeiros — 193 / Defesa Civil — 199</strong>).</li>
+                <li><strong>Precisão GNSS:</strong> A acurácia posicional depende dos sensores do dispositivo do Usuário, visibilidade de satélites e cobertura de vegetação.</li>
+            </ul>
+        </div>
+
+        <h2>4. Limitação por Perda de Dados Locais</h2>
+        <p>Como o Provedor <strong>não hospeda nem custodia cópias de segurança em servidores próprios</strong>, o Provedor não poderá ser responsabilizado pela restauração de dados decorrentes de desinstalação do aplicativo, limpeza de armazenamento do Android ou danos físicos no aparelho do Usuário.</p>
+
+        <h2>5. Direitos Autorais e Propriedade Intelectual</h2>
+        <p>A marca GoField Pro, código-fonte, arquitetura, design de interface e algoritmos são de titularidade exclusiva de <strong>AM TST SAÚDE E SEGURANÇA DO TRABALHO</strong> (CNPJ: <code>65.130.609/0001-20</code>), protegidos pelas Leis nº 9.610/98 e 9.609/98. Todos os direitos reservados. Os dados e projetos gerados pelo Usuário são de propriedade exclusiva do Usuário.</p>
+
+        <h2>6. Legislação Aplicável e Foro</h2>
+        <p>Estes Termos são regidos pelas leis da República Federativa do Brasil, elegendo-se o Foro competente da Comarca de domicílio do usuário ou da sede da jurisdição aplicável no Brasil.</p>
+
+        <h2>7. Contato e Suporte Oficial</h2>
+        <ul>
+            <li><strong>Titular:</strong> AM TST SAÚDE E SEGURANÇA DO TRABALHO</li>
+            <li><strong>CNPJ:</strong> <code>65.130.609/0001-20</code></li>
+            <li><strong>Site Oficial:</strong> <a href="https://amtst.vercel.app" target="_blank" style="color:var(--primary);">https://amtst.vercel.app</a></li>
+            <li><strong>E-mail de Suporte / Contato:</strong> <code>apoioamtst@gmail.com</code></li>
+            <li><strong>Atendimento:</strong> Exclusivamente eletrônico via e-mail oficial</li>
+        </ul>
+    </div>
+</body>
+</html>
